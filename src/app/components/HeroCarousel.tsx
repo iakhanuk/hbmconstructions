@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const HeroCarousel = () => {
   return (
-    <Carousel autoPlay={true} infiniteLoop={true} showArrows={false} showThumbs={false} interval={4500} stopOnHover={false}   renderIndicator={(onClickHandler, isSelected, index, label) => {
+    <Carousel autoPlay={true} infiniteLoop={true} showArrows={false} showThumbs={false} interval={3000} stopOnHover={false}   renderIndicator={(onClickHandler, isSelected, index, label) => {
         return (
           <CarouselIndicator
             onClickHandler={onClickHandler}
