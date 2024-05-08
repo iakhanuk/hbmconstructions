@@ -9,19 +9,7 @@ import CarouselIndicator from "@/components/Common/CarouselIndicator";
 const GalleryCarousel = ({ gallery }: { gallery: IGalleryImage[] }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
-  const [windowSize, setWindowSize] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, [window.innerWidth, window.innerHeight]);
-
-  const imagesPerSlide = Math.floor(windowSize.width / 300);
+ 
 
   return (
     <Carousel
