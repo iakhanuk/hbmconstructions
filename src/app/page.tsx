@@ -2,10 +2,10 @@ import Image from "next/image";
 import HeroCarousel from "./components/HeroCarousel";
 import ServicesCarousel from "./components/ServicesCarousel";
 import { get_files_from_gallery } from "@/helpers/gallery";
-import { useState } from "react";
 import GalleryCarousel from "./components/GalleryCarousel";
 import { SITE_DATA } from "@/data";
 import ContactSection from "./components/ContactSection";
+import TypeWriterEffect from "./components/TypeWriter";
 
 export default async function Home() {
   async function getGallery() {
@@ -36,7 +36,18 @@ export default async function Home() {
               Hydrogen Building & Maintenance Ltd.
             </span>
           </h1>
-          <p className="mt-4">{SITE_DATA.hero_subheading}</p>
+          <div className="flex text-2xl w-full ">
+            <h2>
+
+            We help you with
+            </h2>
+            <h2 className="ml-2 text-primary font-bold">
+              <TypeWriterEffect
+                strings={["construction.", "restoration.", "remodeling."]}
+                cursor="⚒"
+              />
+            </h2>
+          </div>
         </div>
       </div>
 
@@ -61,7 +72,6 @@ export default async function Home() {
 
       <div id="gallery" className="w-full pt-12  bg-white">
         <div className="flex flex-col  my-8 w-full items-center">
-          
           <h1 className="md:text-8xl text-6xl text-black text-center py-4 font-extrabold">
             Our <span className="text-primary">Gallery</span>
           </h1>
