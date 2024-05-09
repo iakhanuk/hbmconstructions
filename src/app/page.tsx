@@ -36,12 +36,12 @@ export default async function Home() {
               Hydrogen Building & Maintenance Ltd.
             </span>
           </h1>
-          <div className="flex text-2xl w-full ">
-            <h2>
+          <div className="flex text-2xl w-full flex-col sm:flex-row  mt-2 ">
+            <h2 className="mr-2">
 
             We help you with
             </h2>
-            <h2 className="ml-2 text-primary font-bold">
+            <h2 className=" text-primary font-bold">
               <TypeWriterEffect
                 strings={["construction.", "restoration.", "remodeling."]}
                 cursor="⚒"
