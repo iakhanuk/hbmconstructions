@@ -62,12 +62,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="szFr1mlGsl4WazxM-6p9Q9PwCaBmZN__15tBkLrsSw4"
-        />
-      </Head>
       <body className={`${inter.className} bg-base`}>
         <Navbar />
 
