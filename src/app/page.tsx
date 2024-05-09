@@ -2,17 +2,20 @@ import Image from "next/image";
 import HeroCarousel from "./components/HeroCarousel";
 import ServicesCarousel from "./components/ServicesCarousel";
 import { get_files_from_gallery } from "@/helpers/gallery";
-import GalleryCarousel from "./components/GalleryCarousel";
+import GalleryBoard from "./components/GalleryBoard";
 import { SITE_DATA } from "@/data";
 import ContactSection from "./components/ContactSection";
 import TypeWriterEffect from "./components/TypeWriter";
+import Link from "next/link";
 
-export default async function Home() {
+const Home = async ()  => {
   async function getGallery() {
     "use server";
+    const num_images = 5;
 
     const files = await get_files_from_gallery();
-    return files;
+    const randomLatestNImages = files.slice(0, num_images*2).sort(() => Math.random() - 0.5).slice(0, num_images);
+    return randomLatestNImages;
   }
 
   const gallery = await getGallery();
@@ -29,7 +32,7 @@ export default async function Home() {
             style={{ mixBlendMode: "multiply" }}
           ></div>
         </div>
-        <div className="max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white ">
+        <div className="max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-2">
           <h1 className="text-5xl md:text-7xl font-bold ">
             Welcome to <br />{" "}
             <span className="text-primary">
@@ -53,9 +56,9 @@ export default async function Home() {
 
       {/* -------------------------- Our Services Section -------------------------- */}
 
-      <div id="services" className="w-full pt-12 mb-28 bg-base">
+      <div id="services" className="w-full pt-12 mb-28 bg-base" >
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-6xl text-white text-center py-4 font-extrabold">
+          <h1 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
             Our <span className="text-primary">Services</span>
           </h1>
 
@@ -70,9 +73,9 @@ export default async function Home() {
 
       {/* ----------------------------- Gallery Section ---------------------------- */}
 
-      <div id="gallery" className="w-full pt-12  bg-white">
+      <div id="gallery" className="w-full pt-12 py-8 bg-white">
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-6xl text-black text-center py-4 font-extrabold">
+          <h1 className="md:text-8xl text-5xl text-black text-center py-4 font-extrabold px-2">
             Our <span className="text-primary">Gallery</span>
           </h1>
 
@@ -82,18 +85,30 @@ export default async function Home() {
         </div>
 
         <div className="w-full ">
-          <GalleryCarousel gallery={gallery.slice(10)} />
+          <GalleryBoard gallery={gallery.slice(0,5)} />
+         
         </div>
+
+        <div className="w-full text-center py-8">
+        <Link href={'/gallery'} className="bg-primary text-white py-4 px-6 rounded-sm  mt-4 hover:bg-secondary transition-all">
+          View More
+        </Link>
+        </div>
+
+        
       </div>
+
+
+
       {/* ----------------------------- Contact Section ---------------------------- */}
 
       <div id="contact" className="w-full pt-12 mb-28 bg-base">
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-6xl text-white text-center py-4 font-extrabold">
+          <h1 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
             Get in <span className="text-primary">touch</span>
           </h1>
 
-          <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full">
+          <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full px-2">
             We're here to help you with your building and maintenance needs. Get
             in touch with us today.
           </h3>
@@ -103,6 +118,11 @@ export default async function Home() {
           <ContactSection />
         </div>
       </div>
+
+
+
     </main>
   );
 }
+
+export default Home

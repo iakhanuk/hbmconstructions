@@ -5,7 +5,16 @@ import { Carousel } from "react-responsive-carousel";
 
 const HeroCarousel = () => {
   return (
-    <Carousel autoPlay={true} infiniteLoop={true} showArrows={false} showThumbs={false} interval={3000} stopOnHover={false}   renderIndicator={(onClickHandler, isSelected, index, label) => {
+    <Carousel
+      autoPlay={true}
+      infiniteLoop={true}
+      showArrows={false}
+      showThumbs={false}
+      interval={5000}
+      stopOnHover={false}
+      showStatus={false}
+      
+      renderIndicator={(onClickHandler, isSelected, index, label) => {
         return (
           <CarouselIndicator
             onClickHandler={onClickHandler}
@@ -14,10 +23,10 @@ const HeroCarousel = () => {
             label={label}
           />
         );
-      }}  >
+      }}
+    >
       <div>
         <img className="h-screen object-cover" src="/images/cover1.jpg" />
-       
       </div>
       <div>
         <img className="h-screen object-cover" src="/images/cover2.jpg" />

@@ -5,33 +5,39 @@ import React, { useEffect, useState } from "react";
 const Navbar = () => {
   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
 
-  const [isScrolledFromTop, setIsScrolledFromTop] = useState(false);
-
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 200) {
-        setIsScrolledFromTop(true);
-      } else {
-        setIsScrolledFromTop(false);
-      }
+
+
+      setIsScrolledDown(offset > 200);
+
+   
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }
-  , []);
-
+  }, []);
 
   const handleNavbarToggle = () => {
     setNavbarCollapsed((prev) => !prev);
   };
   return (
-    <nav className={`bg-base fixed w-full z-20 top-0 start-0 border-b  border-primary ${isScrolledFromTop || !navbarCollapsed?"bg-opacity-100":"bg-opacity-25"} transition-all  `}>
-      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav
+      className={`bg-base fixed w-full z-20 top-0 start-0 border-b  border-primary ${
+        isScrolledDown || !navbarCollapsed ? "bg-opacity-100" : "bg-opacity-25"
+      }  transition-all   `}
+    >
+      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-2 md:py-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={SITE_DATA.navbar_logo} className="h-12 md:h-16 rounded-md" alt="Hyde Logo" />
+          <img
+            src={SITE_DATA.navbar_logo}
+            className="h-12 md:h-16 rounded-md"
+            alt="Hyde Logo"
+          />
           <span className="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap text-white">
             {SITE_DATA.navbar_title}
           </span>
@@ -71,13 +77,14 @@ const Navbar = () => {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-base md:bg-transparent transition-all  ">
             {SITE_DATA.nav_links.map((link, index) => (
               <li key={index}>
-              <a
-                href={link.url}
-                className="block py-2 px-3  rounded   md:p-0 md:hover:text-primary text-white hover:bg-primary hover:text-white md:hover:bg-transparent transition-all"
-              >
-                {link.name}
-              </a>
-            </li>
+                <a
+                onClick={handleNavbarToggle}
+                  href={link.url}
+                  className="block py-2 px-3  rounded   md:p-0 md:hover:text-primary text-white hover:bg-primary hover:text-white md:hover:bg-transparent transition-all"
+                >
+                  {link.name}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
