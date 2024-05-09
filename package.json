@@ -14,7 +14,8 @@
     "react-dom": "^18",
     "react-grid-gallery": "^1.0.1",
     "react-responsive": "^10.0.0",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-social-icons": "^6.16.0"
   },
   "devDependencies": {
     "@types/node": "^20",

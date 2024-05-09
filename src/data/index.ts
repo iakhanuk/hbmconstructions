@@ -4,19 +4,19 @@ export const SITE_DATA = {
     nav_links: [
         {
             name: "Home",
-            url: "#",
+            url: "/",
         },
-        {
-            name: "About",
-            url: "#",
-        },
+        // {
+        //     name: "About",
+        //     url: "/about",
+        // },
         {
             name: "Services",
-            url: "#",
+            url: "/#services",
         },
         {
             name: "Contact",
-            url: "#",
+            url: "/#contact",
         },
     ],
     hero_subheading:"Making dreams come true with our specialist team at Hydrogen Building & Maintenance LTD.",
@@ -34,4 +34,22 @@ export const SITE_DATA = {
         phone: "07915368262",
         email: "contact@hbmconstruction.co.uk",
     },
+    social_links:[
+        {
+          username: '@hbmconstruction',
+          url: 'https://www.facebook.com/hbmconstruction',
+        },
+        {
+          username: '@hbmconstruction',
+          url: 'https://www.instagram.com/hbmconstruction/',
+        },
+        {
+          username: '@hbmconstruction',
+          url: 'https://twitter.com/HydrogenBuild',
+        },
+        {
+          username: '@hbmconstruction',
+          url: 'https://www.linkedin.com/company/hydrogen-building-maintenance-ltd',
+        },
+      ]
 }

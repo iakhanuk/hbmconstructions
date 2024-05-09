@@ -28,10 +28,10 @@ const Navbar = () => {
     setNavbarCollapsed((prev) => !prev);
   };
   return (
-    <nav className={`bg-gray-900 fixed w-full z-20 top-0 start-0 border-b  border-gray-600 ${isScrolledFromTop?"bg-opacity-100":"bg-opacity-25"} transition-all  `}>
+    <nav className={`bg-base fixed w-full z-20 top-0 start-0 border-b  border-primary ${isScrolledFromTop || !navbarCollapsed?"bg-opacity-100":"bg-opacity-25"} transition-all  `}>
       <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={SITE_DATA.navbar_logo} className="h-16 rounded-md" alt="Hyde Logo" />
+          <img src={SITE_DATA.navbar_logo} className="h-12 md:h-16 rounded-md" alt="Hyde Logo" />
           <span className="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap text-white">
             {SITE_DATA.navbar_title}
           </span>
@@ -40,7 +40,7 @@ const Navbar = () => {
           <button
             onClick={handleNavbarToggle}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2  text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-primary hover:text-white transition-all"
             aria-controls="navbar-sticky"
             aria-expanded="false"
           >
@@ -53,10 +53,10 @@ const Navbar = () => {
               viewBox="0 0 17 14"
             >
               <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                stroke="#ccc"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
@@ -68,12 +68,12 @@ const Navbar = () => {
           } items-center justify-between w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-gray-800 md:bg-transparent border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-base md:bg-transparent transition-all  ">
             {SITE_DATA.nav_links.map((link, index) => (
               <li key={index}>
               <a
                 href={link.url}
-                className="block py-2 px-3  rounded   md:p-0 md:hover:text-orange-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                className="block py-2 px-3  rounded   md:p-0 md:hover:text-primary text-white hover:bg-primary hover:text-white md:hover:bg-transparent transition-all"
               >
                 {link.name}
               </a>

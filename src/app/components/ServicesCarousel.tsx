@@ -52,13 +52,13 @@ const ServicesCarousel = () => {
             backgroundImage: `url(${service.image})`,
           }}
         >
-          <div className="lg:opacity-0 hover:opacity-100 transition-all h-full  bg-black bg-opacity-60 flex items-center justify-center py-28  border-b-2 border-orange-500">
+          <div className="lg:opacity-0 hover:opacity-100 transition-all h-full  bg-base bg-opacity-60 flex items-center justify-center py-28  border-b-2 border-primary">
             <div className="text-white text-center max-w-sm md:max-w-md">
               <p className="">{service.description}</p>
             </div>
           </div>
 
-          <h1 className="mt-auto text-4xl font-bold bg-black bg-opacity-50 w-full mx-auto px-4 pt-2 pb-8  lg:pb-2 rounded-sm ">
+          <h1 className="text-white mt-auto text-4xl font-bold bg-base bg-opacity-50 w-full mx-auto px-4 pt-2 pb-8  lg:pb-2 rounded-sm ">
             {service.title}
           </h1>
         </div>

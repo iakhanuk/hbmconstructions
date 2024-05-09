@@ -16,7 +16,7 @@ const CarouselIndicator = ({
   if (isSelected) {
     return (
       <li
-        className="bg-orange-500 rounded-full h-2 w-2 inline-block mx-2 "
+        className="bg-primary rounded-full h-2 w-2 inline-block mx-2 "
         aria-label={`Selected: ${label} ${index + 1}`}
         title={`Selected: ${label} ${index + 1}`}
       />
