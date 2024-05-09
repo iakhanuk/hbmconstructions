@@ -10,6 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hydrogen Building & Maintenance",
+  applicationName: "Hydrogen Building & Maintenance",
+  
   description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your go-to construction company. Our skilled team brings decades of experience, ensuring top-notch work and excellent service. Specializing in extensions, loft conversions, and more, we cover a wide range of projects including plumbing, electrical work, and roofing. If you have a project in mind, just ask—we're here to help!",
   openGraph: {
     type: "website",
@@ -25,10 +27,14 @@ export const metadata: Metadata = {
         alt: "Hydrogen Building & Maintenance",
       },
     ],
+    description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your go-to construction company. Our skilled team brings decades of experience, ensuring top-notch work and excellent service. Specializing in extensions, loft conversions, and more, we cover a wide range of projects including plumbing, electrical work, and roofing. If you have a project in mind, just ask—we're here to help!",
     emails: ["contact@hbmconstruction.co.uk", "hydrogenbnm@gmail.com"],
     phoneNumbers: ["07915368262"],
-  },
 
+  },
+  keywords : ["construction", "restoration", "remodeling", "extensions", "loft conversions", "plumbing", "electrical work", "roofing", "Essex", "UK", 
+  "Hydrogen Building & Maintenance", "Hydrogen Building & Maintenance LTD", "Hydrogen Building & Maintenance Ltd.", "Hydrogen Building & Maintenance Limited", "Hydrogen Building & Maintenance Limited."],
+  
 };
 
 export default function RootLayout({
