@@ -25,7 +25,7 @@ const ServicesCarousel = () => {
       }}
       emulateTouch={true}
       preventMovementUntilSwipeScrollTolerance={true}
-      swipeScrollTolerance={70}
+      swipeScrollTolerance={60}
     >
       {SITE_DATA.services.map((service) => (
         <div
