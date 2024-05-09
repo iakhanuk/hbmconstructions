@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hydrogen Building & Maintenance",
-  description: "Hydrogen Building & Maintenance Ltd is a construction company based in London, UK, specializing in building, renovation, and remodeling services.",
+  description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your go-to construction company. Our skilled team brings decades of experience, ensuring top-notch work and excellent service. Specializing in extensions, loft conversions, and more, we cover a wide range of projects including plumbing, electrical work, and roofing. If you have a project in mind, just ask—we're here to help!",
   openGraph: {
     type: "website",
     locale: "en_GB",
