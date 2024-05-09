@@ -19,9 +19,13 @@ const ServicesCarousel = () => {
       centerSlidePercentage={Math.max(25, 100 / SITE_DATA.services.length)}
       showIndicators={isMobile}
       showStatus={false}
+      
       renderIndicator={(onClickHandler, isSelected, index, label) => {
       return <CarouselIndicator onClickHandler={onClickHandler} isSelected={isSelected} index={index} label={label} />;
       }}
+      emulateTouch={true}
+      preventMovementUntilSwipeScrollTolerance={true}
+      swipeScrollTolerance={10}
     >
       {SITE_DATA.services.map((service) => (
         <div

@@ -1,5 +1,5 @@
 export const SITE_DATA = {
-  url: "https://hbmconstruction.co.uk",
+  url: "https://hbmconsturction.vercel.app/",
   navbar_title: "Hydrogen Building & Maintenance Ltd.",
   navbar_logo: "/images/hbm-logo.jpeg",
   nav_links: [
