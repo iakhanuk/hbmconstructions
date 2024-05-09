@@ -33,17 +33,18 @@ const Home = async ()  => {
           ></div>
         </div>
         <div className="max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-2">
-          <h1 className="text-5xl md:text-7xl font-bold ">
-            Welcome to <br />{" "}
-            <span className="text-primary">
+          <h6 className="text-5xl md:text-7xl font-bold w-full">
+            Welcome to </h6>
+            <h1  className="text-primary text-5xl md:text-7xl font-bold w-full">
+            
               Hydrogen Building & Maintenance Ltd.
-            </span>
+            
           </h1>
           <div className="flex text-2xl w-full flex-col sm:flex-row  mt-2 ">
-            <h2 className="mr-2">
+            <h6 className="mr-2">
 
             We help you with
-            </h2>
+            </h6>
             <h2 className=" text-primary font-bold">
               <TypeWriterEffect
                 strings={["construction.", "restoration.", "remodeling."]}
@@ -58,9 +59,9 @@ const Home = async ()  => {
 
       <div id="services" className="w-full pt-12 mb-28 bg-base" >
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
+          <h2 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
             Our <span className="text-primary">Services</span>
-          </h1>
+          </h2>
 
           <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full">
             "Comprehensive Services with Clean Workspaces, Client Collaboration,
@@ -75,9 +76,9 @@ const Home = async ()  => {
 
       <div id="gallery" className="w-full pt-12 py-8 bg-white">
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-5xl text-black text-center py-4 font-extrabold px-2">
+          <h2 className="md:text-8xl text-5xl text-black text-center py-4 font-extrabold px-2">
             Our <span className="text-primary">Gallery</span>
-          </h1>
+          </h2>
 
           <h3 className="text-center text-lg text-gray-900 max-w-sm md:max-w-lg lg:max-w-full">
             View our latest projects and the quality of our workmanship
@@ -104,9 +105,9 @@ const Home = async ()  => {
 
       <div id="contact" className="w-full pt-12 mb-28 bg-base">
         <div className="flex flex-col  my-8 w-full items-center">
-          <h1 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
+          <h2 className="md:text-8xl text-5xl text-white text-center py-4 font-extrabold px-2">
             Get in <span className="text-primary">touch</span>
-          </h1>
+          </h2>
 
           <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full px-2">
             We're here to help you with your building and maintenance needs. Get
