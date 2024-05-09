@@ -4,10 +4,6 @@ export const SITE_DATA = {
   navbar_logo: "/images/hbm-logo.jpeg",
   nav_links: [
     {
-      name: "Home",
-      url: "/",
-    },
-    {
       name: "About",
       url: "/about",
     },
