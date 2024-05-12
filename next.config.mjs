@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/admin',
+        destination: 'https://hbm-constructions.admin.datocms.com/',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
