@@ -21,7 +21,7 @@ const Gallery = async () => {
         <GalleryCarousel />
       <div className="flex flex-col mx-auto bg-base text-white p-12 gap-8 sm:w-4/5">
         <h1 className="text-6xl font-bold text-center">
-          Welcome To Our <span className="text-primary">Gallery</span>
+         Our <span className="text-primary">Gallery</span>
         </h1>
         <p className="text-center">
             Here are some of the images of our work. We take pride in our work and we hope you enjoy it as much as we do.

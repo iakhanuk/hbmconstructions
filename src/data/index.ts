@@ -24,7 +24,7 @@ export const SITE_DATA = {
         url: process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000",
         siteName: "Hydrogen Building & Maintenance Ltd.",
         countryName: "United Kingdom",
-        images: ["/images/hbm-cover.png"],
+        images: "/images/hbm-cover.png",
         description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your premier construction company. With decades of experience, we specialize in extensions, loft conversions, plumbing, electrical work, and roofing. Got a project? Just ask—we're here to help!",
         emails: "contact@hbmconstruction.co.uk",
         phoneNumbers: "07915368262"

@@ -23,7 +23,7 @@ const About =async () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center w-full bg-base text-white p-12">
-        <h1 className="text-4xl font-bold">About Us</h1>
+        <h2 className="text-4xl font-bold">About Us</h2>
         <div className="text-lg mt-4 flex flex-col gap-2 max-w-3xl text-pretty">
           <p className="indent-10">
             Hydrogen Building & Maintenance LTD is a Construction company
@@ -49,7 +49,7 @@ const About =async () => {
 
 
       <div className="flex flex-col items-center justify-center w-full bg-base text-white p-12">
-        <h1 className="text-4xl font-bold">Contact Us</h1>
+        <h2 className="text-4xl font-bold">Contact Us</h2>
         <div className="text-lg mt-4 flex flex-col gap-2 max-w-3xl">
           <p >
           For inquiries or project discussions, reach out to us via phone, email, or our website. We're eager to assist you with top-notch construction services.

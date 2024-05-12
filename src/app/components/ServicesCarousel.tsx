@@ -43,9 +43,9 @@ const ServicesCarousel = ({services}:{services:IProvidedService[]}) => {
             </div>
           </div>
 
-          <h1 className="text-white mt-auto text-2xl sm:text-4xl font-bold bg-black bg-opacity-70 w-full mx-auto px-4 pt-2 pb-8  lg:pb-2 rounded-sm ">
+          <h3 className="text-white mt-auto text-2xl sm:text-4xl font-bold bg-black bg-opacity-70 w-full mx-auto px-4 pt-2 pb-8  lg:pb-2 rounded-sm ">
             {service.serviceName}
-          </h1>
+          </h3>
         </div>
       ))}
     </Carousel>

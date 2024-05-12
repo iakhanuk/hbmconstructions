@@ -47,7 +47,7 @@ const Footer = async () => {
           </div>
 
           <div className="flex flex-col gap2">
-            <h1 className="text-2xl font-bold">Socials</h1>
+            <h3 className="text-2xl font-bold">Socials</h3>
             <div className="flex flex-row sm:flex-col flex-wrap gap-2 justify-between">
               {socials.map((social, index) => (
                 <div key={social.url} className="flex gap-2 items-center">

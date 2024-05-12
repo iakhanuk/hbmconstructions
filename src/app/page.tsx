@@ -42,8 +42,8 @@ const Home = async ()  => {
           ></div>
         </div>
         <div className=" max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-2">
-          <h6 className="text-5xl md:text-7xl font-bold w-full">
-            Welcome to </h6>
+          <span className="text-5xl md:text-7xl font-bold w-full">
+            Welcome to </span>
             <h1  className="text-primary text-5xl md:text-7xl font-bold w-full">
             
               Hydrogen Building & Maintenance Ltd.

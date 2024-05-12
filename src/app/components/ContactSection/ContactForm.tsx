@@ -62,10 +62,10 @@ const ContactForm = () => {
   return (
     <div className="w-full flex justify-center border-2  border-primary p-12">
       {(submitted || error!="") ? (
-        <h1 className={`text-4xl font-bold ${error!=""?"text-red-300":"text-white"} animate-pulse `}>
+        <h3 className={`text-4xl font-bold ${error!=""?"text-red-300":"text-white"} animate-pulse `}>
           
           {error ? error : "Thank you for your message, we will get back to you soon!"}
-        </h1>
+        </h3>
       ) : (
         <form className="w-full max-w-lg " onSubmit={handleSubmit}>
           <div className="flex flex-col mb-4">
