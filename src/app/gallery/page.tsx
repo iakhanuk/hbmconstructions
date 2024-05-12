@@ -2,17 +2,17 @@
 import React from "react";
 import Image from "next/image";
 import { SITE_DATA } from "@/data";
-import { get_files_from_gallery } from "@/helpers/gallery";
 import PhotoAlbum from "react-photo-album";
 import GalleryImage from "@/components/Common/GalleryImage";
 import PhotoGallery from "./components/PhotoGallery";
 import GalleryCarousel from "./components/GalleryCarousel";
+import { fetch_gallery } from "@/helpers/dotCMS";
 
 const Gallery = async () => {
   async function getGallery() {
     "use server";
-    const files = await get_files_from_gallery();
-    return files;
+    const images = await fetch_gallery();
+    return images;
   }
 
   const gallery = await getGallery();

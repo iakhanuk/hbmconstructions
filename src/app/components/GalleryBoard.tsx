@@ -2,10 +2,10 @@
 import React, { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
-import { IGalleryImage } from "@/helpers/gallery";
 
 import PhotoAlbum, { RenderPhotoProps } from "react-photo-album";
 import GalleryImage from "@/components/Common/GalleryImage";
+import { IGalleryImage } from "@/types";
 
 
 
@@ -17,8 +17,8 @@ const GalleryBoard = ({ gallery }: { gallery: IGalleryImage[] }) => {
       photos={gallery.map((image) => ({
         height: image.height ? image.height / (isMobile ? 500 : 100) : 1,
         width: image.width ? image.width / (isMobile ? 500 : 100) : 1,
-        src: image.src,
-        alt: image.alt,
+        src: image.url,
+        alt: image.alt || (image.tags.length ? image.tags.join(", ") : image.smartTags.join(", "))
       }))}
       layout="rows"
       spacing={0}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import HeroCarousel from "./components/HeroCarousel";
 import ServicesCarousel from "./components/ServicesCarousel";
-import { get_files_from_gallery } from "@/helpers/gallery";
+import { fetch_gallery, fetch_services } from "@/helpers/dotCMS";
 import GalleryBoard from "./components/GalleryBoard";
 import { SITE_DATA } from "@/data";
 import ContactSection from "./components/ContactSection";
@@ -9,16 +9,25 @@ import TypeWriterEffect from "./components/TypeWriter";
 import Link from "next/link";
 
 const Home = async ()  => {
-  async function getGallery() {
+  async function getHomeData() {
     "use server";
     const num_images = 5;
+    const photos = await fetch_gallery(10)
 
-    const files = await get_files_from_gallery();
-    const randomLatestNImages = files.slice(0, num_images*2).sort(() => Math.random() - 0.5).slice(0, num_images);
-    return randomLatestNImages;
+    const services = await fetch_services()
+
+
+
+    const randomLatestNImages = photos.slice(0, num_images*2).sort(() => Math.random() - 0.5).slice(0, num_images);
+    return {
+      gallery: randomLatestNImages,
+      services: services
+    
+    };
   }
 
-  const gallery = await getGallery();
+  const {gallery, services} = await getHomeData();
+
 
   return (
     <main className="min-h-screen">
@@ -28,11 +37,11 @@ const Home = async ()  => {
           <HeroCarousel />
 
           <div
-            className="absolute inset-0 bg-gray-400"
+            className="absolute inset-0 bg-gray-600"
             style={{ mixBlendMode: "multiply" }}
           ></div>
         </div>
-        <div className="max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-2">
+        <div className=" max-w-sm md:max-w-2xl mx-auto relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-2">
           <h6 className="text-5xl md:text-7xl font-bold w-full">
             Welcome to </h6>
             <h1  className="text-primary text-5xl md:text-7xl font-bold w-full">
@@ -69,7 +78,7 @@ const Home = async ()  => {
           </h3>
         </div>
 
-        <ServicesCarousel />
+        <ServicesCarousel  services={services} />
       </div>
 
       {/* ----------------------------- Gallery Section ---------------------------- */}

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { THEMES } from "./themes";
 
 const config: Config = {
   content: [
@@ -13,13 +14,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors: {
-        "primary": "#FF5426",
-        "secondary": "#7D1128",
-        "secondary-dark": "#3C0919",
-        "accent": "#FFD791",
-        "base" : "#000F08",
-      },
+      colors: THEMES.pigment_green
     },
   },
   plugins: [],

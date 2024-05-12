@@ -3,15 +3,18 @@ import React from "react";
 import QRCode from "react-qr-code";
 import { SocialIcon } from "react-social-icons";
 import QR from "./QR";
+import { fetch_contact } from "@/helpers/dotCMS";
 
-const Footer = () => {
+const Footer = async () => {
+  const getGeneralInfo = async () => {
+    "use server";
+    return await fetch_contact();
+  };
+
+  const { contact, socials } = await getGeneralInfo();
+
   return (
-    <footer
-      className=" border-t-2 border-primary text-white py-8 "
-      style={{
-        backgroundColor: "#FF5426",
-      }}
-    >
+    <footer className=" border-t-2 border-secondary-dark text-white py-8 bg-primary ">
       <div className="flex flex-col sm:flex-row px-4 sm:px-12 sm:justify-between items-center">
         <div className="  flex h-full flex-col text-center gap-2 max-w-sm sm:max-w-md">
           <img
@@ -31,10 +34,13 @@ const Footer = () => {
             <h2 className="text-2xl font-bold">Address</h2>
 
             <p className="">
-              {SITE_DATA.contact_info.name} <br />
-              {SITE_DATA.contact_info.address_lines.map((line) => (
-                <span key={line}>
-                  {line} <br />
+              {contact.name} <br />
+            </p>
+            <p>
+              {contact.address.split("\n").map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
                 </span>
               ))}
             </p>
@@ -43,12 +49,12 @@ const Footer = () => {
           <div className="flex flex-col gap2">
             <h1 className="text-2xl font-bold">Socials</h1>
             <div className="flex flex-row sm:flex-col flex-wrap gap-2 justify-between">
-              {SITE_DATA.social_links.map((social, index) => (
-                <div key={index} className="flex gap-2 items-center">
+              {socials.map((social, index) => (
+                <div key={social.url} className="flex gap-2 items-center">
                   <SocialIcon
                     url={social.url}
                     fgColor="#fff"
-                    bgColor="#FF5426"
+                    bgColor="transparent"
                     style={{ height: 40, width: 40 }}
                   />
 

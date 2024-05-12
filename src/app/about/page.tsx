@@ -1,9 +1,15 @@
 import React from "react";
 import AboutCarousel from "./components/AboutCarousel";
 import Image from "next/image";
-import { SITE_DATA } from "@/data";
+import { fetch_contact } from "@/helpers/dotCMS";
 
-const About = () => {
+const About =async () => {
+  const getGeneralInfo = async () => {
+    "use server";
+    return await fetch_contact();
+  };
+
+  const { contact, socials } = await getGeneralInfo();
   return (
     <div className="flex flex-col w-full ">
       <AboutCarousel />
@@ -51,14 +57,14 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 font-bold">
             <p>
               <span>Email: </span>
-              <a className="hover:text-primary transition-all" href={`mailto:${SITE_DATA.contact_info.email}`}>
-                {SITE_DATA.contact_info.email}
+              <a className="hover:text-primary transition-all" href={`mailto:${contact.email}`}>
+                {contact.email}
               </a>
             </p>
             <p>
               <span>Phone: </span>
-              <a  className="hover:text-primary transition-all" href={`tel:${SITE_DATA.contact_info.phone}`}>
-                {SITE_DATA.contact_info.phone}
+              <a  className="hover:text-primary transition-all" href={`tel:${contact.phone}`}>
+                {contact.phone}
               </a>
             </p>
            

@@ -7,34 +7,28 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "yet-another-react-lightbox/styles.css";
 
 import Footer from "@/components/Footer";
-import Head from "next/head";
+
+import { SITE_DATA } from "@/data";
+
+const {meta_data} = SITE_DATA
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hydrogen Building & Maintenance",
-  applicationName: "Hydrogen Building & Maintenance",
+  title: meta_data.siteName,
+  applicationName: meta_data.siteName,
 
-  description:
-    "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your premier construction company. With decades of experience, we specialize in extensions, loft conversions, plumbing, electrical work, and roofing. Got a project? Just ask—we're here to help!",
+  description: meta_data.description,
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://hbmconstruction.co.uk",
-    siteName: "Hydrogen Building & Maintenance",
-    countryName: "United Kingdom",
-    images: [
-      {
-        url: "/images/hbm-cover.png",
-        width: 800,
-        height: 600,
-        alt: "Hydrogen Building & Maintenance",
-      },
-    ],
-    description:
-      "Hydrogen Building & Maintenance LTD, based in Essex, UK, is your premier construction company. With decades of experience, we specialize in extensions, loft conversions, plumbing, electrical work, and roofing. Got a project? Just ask—we're here to help!",
-    emails: ["contact@hbmconstruction.co.uk", "hydrogenbnm@gmail.com"],
-    phoneNumbers: ["07915368262"],
+    url: meta_data.url,
+    siteName: meta_data.siteName,
+    countryName: meta_data.countryName,
+    images: meta_data.images,
+    description: meta_data.description,
+    emails: meta_data.emails,
+    phoneNumbers: meta_data.phoneNumbers
   },
   keywords: [
     "construction",
