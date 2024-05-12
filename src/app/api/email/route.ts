@@ -1,3 +1,4 @@
+
 export const dynamic = 'force-dynamic' // defaults to auto
 import { ContactEmailTemplate, IContactEmailTemplate } from '@/components/Emails/Contact';
 
@@ -5,8 +6,8 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const fromEmail = process.env.EMAIL_FROM_EMAIL;
-const toEmail = process.env.EMAIL_TO_EMAIL;
+const fromEmail = process.env.EMAIL_FROM;
+const toEmail = process.env.EMAIL_TO;
 
 
 

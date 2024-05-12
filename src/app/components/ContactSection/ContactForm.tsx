@@ -7,6 +7,7 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const validateEmail = (email: string) => {
     const re = /\S+@\S+\.\S+/;
@@ -45,9 +46,12 @@ const ContactForm = () => {
           "Content-Type": "application/json",
         },
       });
-
+      if(resp.status !== 200){
+        setError("An error occurred, please try again late!r");
+      }
       setSubmitted(true);
     } catch (error) {
+      setError("An error occurred, please try again later");
       console.log(error);
     }
     finally{
@@ -57,9 +61,10 @@ const ContactForm = () => {
 
   return (
     <div className="w-full flex justify-center border-2  border-primary p-12">
-      {submitted ? (
-        <h1 className="text-4xl font-bold text-white animate-pulse ">
-          Thank you for your message, we will get back to you soon!
+      {(submitted || error!="") ? (
+        <h1 className={`text-4xl font-bold ${error!=""?"text-red-300":"text-white"} animate-pulse `}>
+          
+          {error ? error : "Thank you for your message, we will get back to you soon!"}
         </h1>
       ) : (
         <form className="w-full max-w-lg " onSubmit={handleSubmit}>
