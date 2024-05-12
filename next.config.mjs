@@ -14,7 +14,7 @@ const nextConfig = {
     return [
       {
         source: '/admin',
-        destination: 'https://hbm-constructions.admin.datocms.com/',
+        destination: 'https://admin.hbmconstructions.co.uk',
         permanent: true,
       },
     ]
