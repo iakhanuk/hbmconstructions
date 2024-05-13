@@ -6,7 +6,7 @@ import QRCode from "react-qr-code";
 const QR = () => {
   return (
     <QRCode
-      onClick={() => navigator.clipboard.writeText(SITE_DATA.meta_data.url)}
+      onClick={() => navigator.clipboard.writeText(typeof(window)!=undefined?window.location.href:SITE_DATA.meta_data.url)}
       size={150}
       value={SITE_DATA.meta_data.url}
       viewBox={`0 0 256 256`}

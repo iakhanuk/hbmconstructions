@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   applicationName: meta_data.siteName,
 
   description: meta_data.description,
+  metadataBase: meta_data.metadataBase,
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: meta_data.url,
     siteName: meta_data.siteName,
     countryName: meta_data.countryName,
-    images: meta_data.images,
     description: meta_data.description,
     emails: meta_data.emails,
     phoneNumbers: meta_data.phoneNumbers

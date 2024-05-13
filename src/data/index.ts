@@ -21,13 +21,13 @@ export const SITE_DATA = {
     ],
 
     meta_data: {
-        url: process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000",
+        url: process.env.SITE_URL ? process.env.SITE_URL : "http://localhost:3000",
         siteName: "Hydrogen Building & Maintenance Ltd.",
         countryName: "United Kingdom",
-        images: "/images/hbm-cover.png",
         description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is a construction company. We specialize in work like construction, restoration and remodeling.",
         emails: "contact@hbmconstruction.co.uk",
-        phoneNumbers: "07915368262"
+        phoneNumbers: "07915368262",
+        metadataBase: new URL(process.env.SITE_URL ? process.env.SITE_URL : "http://localhost:3000")
     }
 
 
