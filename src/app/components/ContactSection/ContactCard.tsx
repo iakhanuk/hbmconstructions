@@ -13,7 +13,7 @@ const ContactCard = async () => {
   return (
     <div className="w-full flex flex-col justify-center max-w-lg  bg-primary p-12">
       <h3 className="text-4xl font-bold text-white">Contact Info</h3>
-      <div className="text-white mt-4 text-lg">
+      <div className="text-white mt-4 text-sm md:text-md lg:text-lg">
         <p className="">
           {contact.name} <br />
         </p>
@@ -26,7 +26,7 @@ const ContactCard = async () => {
           ))}
         </p>
         <hr className="my-2 border-secondary" />
-        <p className="font-semibold text-ellipsis overflow-hidden">
+        <p className="font-semibold text-ellipsis overflow-hidden ">
           
             Phone:{" "}
             <a href={`tel:${contact.phone}`}>
