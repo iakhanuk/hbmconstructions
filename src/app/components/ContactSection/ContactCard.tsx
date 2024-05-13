@@ -26,18 +26,18 @@ const ContactCard = async () => {
           ))}
         </p>
         <hr className="my-2 border-secondary" />
-        <p>
-          <span className="font-semibold">
+        <p className="font-semibold text-ellipsis overflow-hidden">
+          
             Phone:{" "}
             <a href={`tel:${contact.phone}`}>
               {contact.phone}
             </a>{" "}
             <br />
             Email:{" "}
-            <a href={`mailto:${contact.email}`}>
+            <a className="text-ellipsis" href={`mailto:${contact.email}`}>
               {contact.email}
             </a>
-          </span>
+         
         </p>
       </div>
     </div>
