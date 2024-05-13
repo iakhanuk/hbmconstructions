@@ -4,7 +4,7 @@ import React from "react";
 import QRCode from "react-qr-code";
 
 const QR = () => {
-  const url = typeof(window)!=undefined?window.location.href:SITE_DATA.meta_data.url
+  const url = SITE_DATA.meta_data.url
   return (
     <QRCode
       onClick={() => navigator.clipboard.writeText(url)}
