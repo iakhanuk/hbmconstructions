@@ -21,7 +21,7 @@ export const SITE_DATA = {
     ],
 
     meta_data: {
-        url: process.env.SITE_URL ? process.env.NEXT_PUBLIC_SITE_URL : "http://localhost:3000",
+        url: process.env.NEXT_PUBLIC_SITE_URL ? process.env.NEXT_PUBLIC_SITE_URL : "http://localhost:3000",
         siteName: "Hydrogen Building & Maintenance Ltd.",
         countryName: "United Kingdom",
         description: "Hydrogen Building & Maintenance LTD, based in Essex, UK, is a construction company. We specialize in work like construction, restoration and remodeling.",
