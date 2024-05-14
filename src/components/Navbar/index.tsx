@@ -1,5 +1,6 @@
 "use client";
 import { SITE_DATA } from "@/data";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -33,10 +34,14 @@ const Navbar = () => {
     >
       <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-2 md:py-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
+          <Image
             src={SITE_DATA.navbar_logo}
-            className="h-12 md:h-16 rounded-md"
+            className="h-12 w-fit md:h-16 rounded-md"
             alt="Hyde Logo"
+            height={200}
+            width={200}
+
+
           />
           <span className="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap text-white">
             {SITE_DATA.navbar_title}

@@ -1,5 +1,6 @@
 "use client";
 import CarouselIndicator from "@/components/Common/CarouselIndicator";
+import Image from "next/image";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 
@@ -26,13 +27,13 @@ const HeroCarousel = () => {
       }}
     >
       <div>
-        <img className="h-screen object-cover" src="/images/cover1.jpg" />
+        <Image height={720} width={1000} className="h-screen object-cover" src="/images/cover1.jpg" alt="hbm construction cover image 1"  />
       </div>
       <div>
-        <img className="h-screen object-cover" src="/images/cover2.jpg" />
+        <Image height={720} width={1000} className="h-screen object-cover" src="/images/cover2.jpg" alt="hbm construction cover image 2" />
       </div>
       <div>
-        <img className="h-screen object-cover" src="/images/cover3.jpg" />
+        <Image height={720} width={1000} className="h-screen object-cover" src="/images/cover3.jpg" alt="hbm construction cover image 3" />
       </div>
     </Carousel>
   );

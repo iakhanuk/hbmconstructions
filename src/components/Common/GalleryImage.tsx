@@ -8,14 +8,16 @@ const GalleryImage = ({
     imageProps: { alt, title, sizes, className, onClick },
     wrapperStyle,
   }: RenderPhotoProps) => {
+    
     return (
       <div style={{ ...wrapperStyle}} className="relative overflow-hidden border-[1px] border-transparent">
         <Image
-          fill
+        fill
           src={photo}
           placeholder={"blurDataURL" in photo ? "blur" : undefined}
           {...{ alt, title, sizes, className, onClick }}
-          className=" hover:scale-125 transition-all  duration-300 cursor-pointer hover:rotate-2"
+          className=" hover:scale-125 transition-all w-full object-cover duration-300 cursor-pointer hover:rotate-2"
+         
         />
       </div>
     );

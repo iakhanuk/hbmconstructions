@@ -4,6 +4,7 @@ import QRCode from "react-qr-code";
 import { SocialIcon } from "react-social-icons";
 import QR from "./QR";
 import { fetch_contact } from "@/helpers/dotCMS";
+import Image from "next/image";
 
 const Footer = async () => {
   const getGeneralInfo = async () => {
@@ -17,10 +18,12 @@ const Footer = async () => {
     <footer className=" border-t-2 border-secondary-dark text-white py-8 bg-primary ">
       <div className="flex flex-col sm:flex-row px-4 sm:px-12 sm:justify-between items-center">
         <div className="  flex h-full flex-col text-center gap-2 max-w-sm sm:max-w-md">
-          <img
+          <Image
             src="/images/hbm-cover.png"
             alt="Hydrogen construction"
-            className=" rounded-md hidden md:inline-block min-w-40"
+            className=" rounded-md hidden md:inline-block min-w-40 "
+            height={300}
+            width={300}
           />
         </div>
 
