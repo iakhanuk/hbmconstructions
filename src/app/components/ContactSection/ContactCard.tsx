@@ -1,5 +1,6 @@
 import { SITE_DATA } from "@/data";
 import { fetch_contact } from "@/helpers/dotCMS";
+import Link from "next/link";
 import React from "react";
 
 const ContactCard = async () => {
@@ -29,14 +30,14 @@ const ContactCard = async () => {
         <p className="font-semibold text-ellipsis overflow-hidden ">
           
             Phone:{" "}
-            <a href={`tel:${contact.phone}`}>
+            <Link href={`tel:${contact.phone}`}>
               {contact.phone}
-            </a>{" "}
+            </Link>{" "}
             <br />
             Email:{" "}
-            <a className="text-ellipsis" href={`mailto:${contact.email}`}>
+            <Link className="text-ellipsis" href={`mailto:${contact.email}`}>
               {contact.email}
-            </a>
+            </Link>
          
         </p>
       </div>

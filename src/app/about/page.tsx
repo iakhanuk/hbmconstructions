@@ -2,6 +2,7 @@ import React from "react";
 import AboutCarousel from "./components/AboutCarousel";
 import Image from "next/image";
 import { fetch_contact } from "@/helpers/dotCMS";
+import Link from "next/link";
 
 const About = async () => {
   const getGeneralInfo = async () => {
@@ -67,21 +68,21 @@ const About = async () => {
           <div className="flex flex-col sm:flex-row gap-4 font-bold">
             <p>
               <span>Email: </span>
-              <a
+              <Link
                 className="hover:text-primary transition-all"
                 href={`mailto:${contact.email}`}
               >
                 {contact.email}
-              </a>
+              </Link>
             </p>
             <p>
               <span>Phone: </span>
-              <a
+              <Link
                 className="hover:text-primary transition-all"
                 href={`tel:${contact.phone}`}
               >
                 {contact.phone}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

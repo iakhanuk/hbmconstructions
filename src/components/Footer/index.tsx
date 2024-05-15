@@ -5,6 +5,7 @@ import { SocialIcon } from "react-social-icons";
 import QR from "./QR";
 import { fetch_contact } from "@/helpers/dotCMS";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = async () => {
   const getGeneralInfo = async () => {
@@ -61,12 +62,12 @@ const Footer = async () => {
                     style={{ height: 40, width: 40 }}
                   />
 
-                  <a
+                  <Link
                     href={social.url}
                     className="text-white hidden sm:inline-block "
                   >
                     {social.username}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>

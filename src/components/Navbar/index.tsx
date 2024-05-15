@@ -1,6 +1,7 @@
 "use client";
 import { SITE_DATA } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -33,11 +34,11 @@ const Navbar = () => {
       }  transition-all   `}
     >
       <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-2 md:py-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image
             src={SITE_DATA.navbar_logo}
             className="h-12 w-fit md:h-16 rounded-md"
-            alt="Hyde Logo"
+            alt="Hydrogen Building & Maintenance LTD. Logo"
             height={200}
             width={200}
 
@@ -46,7 +47,7 @@ const Navbar = () => {
           <span className="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap text-white">
             {SITE_DATA.navbar_title}
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             onClick={handleNavbarToggle}
@@ -82,13 +83,14 @@ const Navbar = () => {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-base md:bg-transparent transition-all  ">
             {SITE_DATA.nav_links.map((link, index) => (
               <li key={index}>
-                <a
+                <Link
+                about={'Navbar link for ' + link.name}
                 onClick={handleNavbarToggle}
                   href={link.url}
                   className="block py-2 px-3  rounded   md:p-0 md:hover:text-primary text-white hover:bg-primary hover:text-white md:hover:bg-transparent transition-all"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
