@@ -76,7 +76,7 @@ const Footer = async () => {
       </div>
       <hr className="border-t-[1px] my-2 border-base" />
       <p className="text-white mt-6 text-center">
-        © {new Date().getFullYear()} Hydrogen Building & Maintenance LTD
+        © 2020 Hydrogen Building & Maintenance LTD
       </p>
     </footer>
   );
