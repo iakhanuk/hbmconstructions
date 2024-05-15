@@ -50,10 +50,10 @@ const Home = async ()  => {
             
           </h1>
           <div className="flex text-2xl w-full flex-col sm:flex-row  mt-2 ">
-            <h6 className="mr-2">
+            <span className="mr-2">
 
             We help you with
-            </h6>
+            </span>
             <h2 className=" text-primary font-bold">
               <TypeWriterEffect
                 strings={["construction.", "restoration.", "remodeling."]}
@@ -73,8 +73,7 @@ const Home = async ()  => {
           </h2>
 
           <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full">
-            "Comprehensive Services with Clean Workspaces, Client Collaboration,
-            and Satisfaction Guarantee"
+            Hydrogen Building & Maintenance Ltd. is dedicated to providing the best quality services to our clients.
           </h3>
         </div>
 
@@ -90,7 +89,7 @@ const Home = async ()  => {
           </h2>
 
           <h3 className="text-center text-lg text-gray-900 max-w-sm md:max-w-lg lg:max-w-full">
-            View our latest projects and the quality of our workmanship
+            At HBM Constructions we take pride in our work, and we love to show it.
           </h3>
         </div>
 
@@ -119,8 +118,7 @@ const Home = async ()  => {
           </h2>
 
           <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full px-2">
-            We're here to help you with your building and maintenance needs. Get
-            in touch with us today.
+            HBM us here to help you with your construction and maintenance needs. Get in touch with us today.
           </h3>
         </div>
 

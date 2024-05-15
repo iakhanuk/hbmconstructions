@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 import { SITE_DATA } from "@/data";
@@ -18,19 +17,19 @@ const Gallery = async () => {
   const gallery = await getGallery();
   return (
     <div className="flex flex-col w-full ">
-        <GalleryCarousel />
+      <GalleryCarousel />
       <div className="flex flex-col mx-auto bg-base text-white p-12 gap-8 sm:w-4/5">
         <h1 className="text-6xl font-bold text-center">
-         Our <span className="text-primary">Gallery</span>
+          Our <span className="text-primary">Gallery</span>
         </h1>
-        <p className="text-center">
-            Here are some of the images of our work. We take pride in our work and we hope you enjoy it as much as we do.
-        </p>
+        <h2 className="text-center">
+          At Hydrogen Building & Maintenance, we take pride in our work, and we
+          love to show it. 
+        </h2>
         <div className=" w-full min-h-screen">
-       <PhotoGallery photos={gallery} />
+          <PhotoGallery photos={gallery} />
         </div>
       </div>
-      
     </div>
   );
 };
