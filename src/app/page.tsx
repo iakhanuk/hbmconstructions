@@ -118,7 +118,7 @@ const Home = async ()  => {
           </h2>
 
           <h3 className="text-center text-lg text-gray-200 max-w-sm md:max-w-lg lg:max-w-full px-2">
-            HBM us here to help you with your construction and maintenance needs. Get in touch with us today.
+            HBM is here to help you with your construction and maintenance needs. Get in touch with us today.
           </h3>
         </div>
 
