@@ -30,10 +30,12 @@ const ContactCard = async () => {
         <p className="font-semibold text-ellipsis overflow-hidden ">
           <div className="flex flex-row gap-2 justify-start w-fit">
             <h2>Phone:</h2>
-          
+
             <div className="flex flex-col gap-2 w-fit ">
               <Link href={`tel:${contact.phone}`}>{contact.phone}</Link>{" "}
-              <Link href={`tel:${contact.phone2}`}>{contact.phone2}</Link>{" "}
+              {contact.phone2 && (
+                <Link href={`tel:${contact.phone2}`}>{contact.phone2}</Link>
+              )}
             </div>
           </div>
           <br />
