@@ -27,26 +27,20 @@ const ContactCard = async () => {
           ))}
         </p>
         <hr className="my-2 border-secondary" />
-        <p className="font-semibold text-ellipsis overflow-hidden flex flex-row gap-2 ">
-            <h3>Phone:</h3>
+        <p className="font-semibold text-ellipsis overflow-hidden ">
+          <div className="flex flex-row gap-2 justify-start w-fit">
+            <h2>Phone:</h2>
           
             <div className="flex flex-col gap-2 w-fit ">
-            <Link href={`tel:${contact.phone}`}>
-              {contact.phone}
-            </Link>{" "}
-            <Link href={`tel:${contact.phone2}`}>
-              {contact.phone2}
-            </Link>{" "}
-
+              <Link href={`tel:${contact.phone}`}>{contact.phone}</Link>{" "}
+              <Link href={`tel:${contact.phone2}`}>{contact.phone2}</Link>{" "}
             </div>
-            
-            <br />
-         
-            Email:{" "}
-            <Link className="text-ellipsis" href={`mailto:${contact.email}`}>
-              {contact.email}
-            </Link>
-         
+          </div>
+          <br />
+          Email:{" "}
+          <Link className="text-ellipsis" href={`mailto:${contact.email}`}>
+            {contact.email}
+          </Link>
         </p>
       </div>
     </div>
