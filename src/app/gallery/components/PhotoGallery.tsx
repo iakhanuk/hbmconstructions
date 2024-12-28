@@ -2,7 +2,7 @@
 import GalleryImage from "@/components/Common/GalleryImage";
 import { IGalleryImage } from "@/types";
 import React, { useState } from "react";
-import PhotoAlbum from "react-photo-album";
+import PhotoAlbum, { ColumnsLayoutOptions, Photo } from "react-photo-album";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 
 const PhotoGallery = ({ photos }: { photos: IGalleryImage[] }) => {
@@ -21,12 +21,13 @@ const PhotoGallery = ({ photos }: { photos: IGalleryImage[] }) => {
           ? image.tags.join(", ")
           : image.smartTags.join(", "),
     };
-  });
+  })
+  const shuffled_scaled_photos = scaled_photos.sort(() => Math.random() - 0.5);
 
   return (
     <>
       <PhotoAlbum
-        photos={scaled_photos}
+        photos={shuffled_scaled_photos}
         layout="rows"
         spacing={0}
         renderPhoto={GalleryImage}

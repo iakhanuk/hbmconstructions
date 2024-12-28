@@ -94,7 +94,7 @@ const Home = async ()  => {
         </div>
 
         <div className="w-full ">
-          <GalleryBoard gallery={gallery.slice(0,5)} />
+          <GalleryBoard gallery={gallery.sort(() => Math.random() - 0.5).slice(0,5)} />
          
         </div>
 
