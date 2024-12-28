@@ -30,21 +30,18 @@ const ContactCard = async () => {
         <p className="font-semibold text-ellipsis overflow-hidden ">
           
             Phone:{" "}
+            <div className="flex flex-col gap-2 ">
             <Link href={`tel:${contact.phone}`}>
               {contact.phone}
             </Link>{" "}
+            <Link href={`tel:${contact.phone2}`}>
+              {contact.phone2}
+            </Link>{" "}
+
+            </div>
+            
             <br />
-            {
-              contact.phone2 && contact.phone2.length >=7 && (
-                <>
-                  Phone 2:{" "}
-                  <Link href={`tel:${contact.phone2}`}>
-                    {contact.phone2}
-                  </Link>{" "}
-                  <br />
-                </>
-              )
-            }
+         
             Email:{" "}
             <Link className="text-ellipsis" href={`mailto:${contact.email}`}>
               {contact.email}
