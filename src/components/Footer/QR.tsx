@@ -12,6 +12,7 @@ const QR = () => {
       value={url}
       viewBox={`0 0 256 256`}
       className="bg-white p-2 rounded"
+      color="#2BA84A"
       
 
 
