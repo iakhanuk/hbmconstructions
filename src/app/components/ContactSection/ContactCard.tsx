@@ -27,10 +27,10 @@ const ContactCard = async () => {
           ))}
         </p>
         <hr className="my-2 border-secondary" />
-        <p className="font-semibold text-ellipsis overflow-hidden ">
+        <p className="font-semibold text-ellipsis overflow-hidden flex flex-row gap-2 ">
+            <h3>Phone:</h3>
           
-            Phone:{" "}
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col gap-2 w-fit ">
             <Link href={`tel:${contact.phone}`}>
               {contact.phone}
             </Link>{" "}
