@@ -97,6 +97,7 @@ export const fetch_contact = async (): Promise<{
                         name
                         address
                         email
+                        email_2
                         phone
                         phone2
                     }
@@ -118,6 +119,7 @@ export const fetch_contact = async (): Promise<{
                 name: '',
                 address: '',
                 email: '',
+                email_2: '',
                 phone: '',
                 phone2: ''
             },

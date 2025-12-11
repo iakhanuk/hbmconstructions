@@ -39,10 +39,18 @@ const ContactCard = async () => {
             </div>
           </div>
           <br />
-          Email:{" "}
-          <Link className="text-ellipsis" href={`mailto:${contact.email}`}>
-            {contact.email}
-          </Link>
+
+          <div className="flex flex-row gap-2 justify-start w-fit">
+            <h2>Email:</h2>
+
+            <div className="flex flex-col gap-2 w-fit ">
+              <Link className="text-ellipsis" href={`mailto:${contact.email}`}>{contact.email}</Link>{" "}
+              {contact.email_2 && (
+                <Link className="text-ellipsis" href={`mailto:${contact.email_2}`}>{contact.email_2}</Link>
+              )}
+            </div>
+          </div>
+
         </p>
       </div>
     </div>
