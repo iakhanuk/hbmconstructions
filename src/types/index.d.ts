@@ -17,7 +17,7 @@ export interface IContactInfo {
     phone: string;
     phone2?: string;
     email: string;
-    email_2?: string;
+    email2?: string;
 }
 
 export interface ISocialLink {
